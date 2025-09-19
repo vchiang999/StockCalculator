@@ -64,7 +64,7 @@ export async function stock(request: HttpRequest, context: InvocationContext): P
 
     const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
     if (!apiKey) {
-        context.log.error('Alpha Vantage API key not configured');
+        context.log('ERROR: Alpha Vantage API key not configured');
         return {
             status: 500,
             jsonBody: {
@@ -90,7 +90,7 @@ export async function stock(request: HttpRequest, context: InvocationContext): P
         });
 
         if (!response.ok) {
-            context.log.error(`Alpha Vantage API returned status: ${response.status}`);
+            context.log(`ERROR: Alpha Vantage API returned status: ${response.status}`);
             return {
                 status: 502,
                 jsonBody: {
@@ -107,7 +107,7 @@ export async function stock(request: HttpRequest, context: InvocationContext): P
         
         // Check if the response contains valid data
         if (!data['Global Quote'] || !data['Global Quote']['01. symbol']) {
-            context.log.warn(`No data found for symbol: ${symbol}`);
+            context.log(`WARN: No data found for symbol: ${symbol}`);
             return {
                 status: 404,
                 jsonBody: {
@@ -150,7 +150,7 @@ export async function stock(request: HttpRequest, context: InvocationContext): P
         };
 
     } catch (error) {
-        context.log.error('Error fetching stock data:', error);
+        context.log('ERROR: Error fetching stock data:', error);
         
         if (error instanceof TypeError && error.message.includes('fetch')) {
             return {

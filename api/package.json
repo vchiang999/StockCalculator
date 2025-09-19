@@ -2,7 +2,7 @@
   "name": "stock-calculator-api",
   "version": "1.0.0",
   "description": "Azure Functions API for stock price calculator",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
