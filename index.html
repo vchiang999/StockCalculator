@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stock Price Calculator</h1>
+            <p>Calculate price targets based on percentage gains and losses</p>
+        </header>
+        
+        <main>
+            <section class="search-section">
+                <div class="search-container">
+                    <input type="text" id="stockSymbol" placeholder="Enter stock symbol (e.g., AAPL)" maxlength="5">
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div id="loading" class="loading hidden">Searching...</div>
+            </section>
+            
+            <section id="results" class="results-section hidden">
+                <div class="stock-info">
+                    <h2 id="stockName"></h2>
+                    <div class="price-info">
+                        <span class="current-price" id="currentPrice"></span>
+                        <span class="previous-close" id="previousClose"></span>
+                    </div>
+                </div>
+                
+                <div class="price-targets">
+                    <div class="gains">
+                        <h3>Price Targets (Gains)</h3>
+                        <div class="target-list" id="gainTargets"></div>
+                    </div>
+                    <div class="losses">
+                        <h3>Price Targets (Losses)</h3>
+                        <div class="target-list" id="lossTargets"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="error" class="error-section hidden">
+                <div class="error-message" id="errorMessage"></div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

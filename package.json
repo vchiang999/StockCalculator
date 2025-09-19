@@ -1,0 +1,20 @@
+{
+  "name": "stock-price-calculator",
+  "version": "1.0.0",
+  "description": "A modern stock price calculator with percentage-based price targets",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "func:start": "cd api && func start",
+    "func:build": "cd api && npm run build"
+  },
+  "keywords": ["stock", "calculator", "azure", "static-web-app"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {}
+}
